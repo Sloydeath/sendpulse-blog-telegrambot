@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>by.github.sendpusle</groupId>
 	<artifactId>sendpulse-telegrambot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>sendpulse-telegrambot</name>
 	<description>Telegram bot for SendPulse</description>
 

@@ -10,14 +10,32 @@
 	</parent>
 	<groupId>by.github.sendpusle</groupId>
 	<artifactId>sendpulse-telegrambot</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>sendpulse-telegrambot</name>
 	<description>Telegram bot for SendPulse</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<telegrambots-starter-version>5.0.1</telegrambots-starter-version>
+		<log4j.version>1.2.17</log4j.version>
+		<lombok.version>1.18.12</lombok.version>
+		<telegrambots.version>3.5</telegrambots.version>
 	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
 
 	<dependencies>
 		<dependency>
@@ -36,15 +54,28 @@
 			<artifactId>telegrambots-spring-boot-starter</artifactId>
 			<version>${telegrambots-starter-version}</version>
 		</dependency>
-	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+<!--		<dependency>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots</artifactId>
+			<version>${telegrambots.version}</version>
+		</dependency>-->
+
+	</dependencies>
 
 </project>

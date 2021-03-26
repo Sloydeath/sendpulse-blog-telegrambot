@@ -1,0 +1,6 @@
+FROM adoptopenjdk/openjdk8:ubi
+ARG JAR_FILE=target/*/jar
+ENV BOT_NAME=test_sendpulse_tg_bot
+ENV BOT_TOKEN=1766772781:AAGlGqOGkETYnQ_BFlq8gv1MRN3I_ZJKHiQ
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-Dbot.username=${BOT_NAME}", "-Dbot.token=${BOT_TOKEN}", "-jar", "/app.jar"]

@@ -1,8 +1,7 @@
 package by.github.sendpulse.sptb.command;
 
 import by.github.sendpulse.sptb.command.list.UnknownCommand;
-import by.github.sendpulse.sptb.service.SendBotMessageService;
-import by.github.sendpulse.sptb.service.SendBotMessageServiceImpl;
+import by.github.sendpulse.sptb.service.interfaces.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Unit-test for Command Container")
 class CommandContainerTest {
@@ -21,7 +18,17 @@ class CommandContainerTest {
     @BeforeEach
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
-        commandContainer = new CommandContainer(sendBotMessageService);
+        UserService userService = Mockito.mock(UserService.class);
+        QuestionService questionService = Mockito.mock(QuestionService.class);
+        QuizService quizService = Mockito.mock(QuizService.class);
+        SubscriptionGroupService subscriptionGroupService = Mockito.mock(SubscriptionGroupService.class);
+
+        commandContainer = new CommandContainer(
+                sendBotMessageService,
+                userService,
+                subscriptionGroupService,
+                quizService,
+                questionService);
     }
 
     @Test

@@ -1,6 +1,9 @@
 package by.github.sendpulse.sptb.service;
 
 import by.github.sendpulse.sptb.bot.SendPulseTelegramBot;
+import by.github.sendpulse.sptb.service.interfaces.SendBotMessageService;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -9,6 +12,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @Service
 public class SendBotMessageServiceImpl implements SendBotMessageService {
 
+    private static final Logger logger = Logger.getLogger(SendBotMessageServiceImpl.class);
     private final SendPulseTelegramBot sendPulseTelegramBot;
 
     @Autowired
@@ -28,6 +32,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService {
             sendPulseTelegramBot.execute(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
+            logger.log(Level.ERROR, e.getMessage());
         }
     }
 }

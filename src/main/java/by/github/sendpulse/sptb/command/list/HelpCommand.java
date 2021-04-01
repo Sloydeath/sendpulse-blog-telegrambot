@@ -1,8 +1,7 @@
 package by.github.sendpulse.sptb.command.list;
 
-import by.github.sendpulse.sptb.bot.SendPulseTelegramBot;
 import by.github.sendpulse.sptb.command.Command;
-import by.github.sendpulse.sptb.service.SendBotMessageService;
+import by.github.sendpulse.sptb.service.interfaces.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.logging.Level;
@@ -20,8 +19,9 @@ public class HelpCommand implements Command {
                     + "<b>Начать\\закончить работу с ботом</b>\n"
                     + "%s - начать работу со мной\n"
                     + "%s - приостановить работу со мной\n\n"
-                    + "%s - получить помощь в работе со мной\n",
-            START.getCommandName(), STOP.getCommandName(), HELP.getCommandName());
+                    + "%s - получить помощь в работе со мной\n"
+                    + "%s - посмотреть свой наивысший балл в квизе",
+            START.getCommandName(), STOP.getCommandName(), HELP.getCommandName(), SHOW_USER_STATISTICS.getCommandName());
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

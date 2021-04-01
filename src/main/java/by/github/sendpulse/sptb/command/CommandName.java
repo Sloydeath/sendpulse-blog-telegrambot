@@ -8,6 +8,7 @@ public enum CommandName {
     START_QUIZ("/start_quiz"),
     STOP_QUIZ("/stop_quiz"),
     SHOW_USER_STATISTICS("/my_statistics"),
+
     NO("No such command");
 
     private final String commandName;

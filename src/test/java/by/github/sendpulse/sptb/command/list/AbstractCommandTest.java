@@ -1,10 +1,10 @@
 package by.github.sendpulse.sptb.command.list;
 
-import by.github.sendpulse.sptb.SendPulseTelegramBotApplication;
 import by.github.sendpulse.sptb.bot.SendPulseTelegramBot;
 import by.github.sendpulse.sptb.command.Command;
-import by.github.sendpulse.sptb.service.SendBotMessageService;
 import by.github.sendpulse.sptb.service.SendBotMessageServiceImpl;
+import by.github.sendpulse.sptb.service.interfaces.SendBotMessageService;
+import by.github.sendpulse.sptb.service.interfaces.UserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -15,6 +15,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public abstract class AbstractCommandTest {
 
     protected SendPulseTelegramBot sendPulseTelegramBot = Mockito.mock(SendPulseTelegramBot.class);
+    protected UserService userService = Mockito.mock(UserService.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(sendPulseTelegramBot);
 
     abstract Command getCommand();

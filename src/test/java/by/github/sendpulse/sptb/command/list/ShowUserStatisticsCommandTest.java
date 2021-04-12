@@ -10,8 +10,6 @@ import static by.github.sendpulse.sptb.command.list.quiz.ShowUserStatisticsComma
 @DisplayName("Unit test for ShowUserStatisticsCommand")
 class ShowUserStatisticsCommandTest extends AbstractCommandTest{
 
-
-
     @Override
     Command getCommand() {
         return new ShowUserStatisticsCommand(sendBotMessageService, userService);

@@ -7,6 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,8 +30,8 @@ public class SubscriptionGroupServiceImpl implements SubscriptionGroupService {
     }
 
     @Override
-    public Optional<SubscriptionGroup> findById(SubscriptionGroup subscriptionGroup) {
-        return subscriptionGroupRepository.findById(subscriptionGroup.getId());
+    public Optional<SubscriptionGroup> findById(Long id) {
+        return subscriptionGroupRepository.findById(id);
     }
 
     @Override

@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -26,5 +27,5 @@ public class Quiz {
     private String description;
 
     @OneToMany(mappedBy = "quiz")
-    private List<Question> questions;
+    private List<Question> questions = new ArrayList<>();
 }

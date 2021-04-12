@@ -1,14 +1,12 @@
 package by.github.sendpulse.sptb.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode
-@ToString
 @Entity
 @Table(name = "question")
 public class Question {
@@ -39,4 +37,17 @@ public class Question {
     @ManyToOne
     @JoinColumn(name="quiz_id", nullable = false)
     private Quiz quiz;
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", correctAnswer='" + correctAnswer + '\'' +
+                ", optionOne='" + optionOne + '\'' +
+                ", optionTwo='" + optionTwo + '\'' +
+                ", optionThree='" + optionThree + '\'' +
+                ", points=" + points +
+                '}';
+    }
 }

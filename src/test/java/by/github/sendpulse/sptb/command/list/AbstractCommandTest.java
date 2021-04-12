@@ -2,9 +2,10 @@ package by.github.sendpulse.sptb.command.list;
 
 import by.github.sendpulse.sptb.bot.SendPulseTelegramBot;
 import by.github.sendpulse.sptb.command.Command;
-import by.github.sendpulse.sptb.service.UserServiceImpl;
+import by.github.sendpulse.sptb.keyboard.HelpCommandKeyboard;
 import by.github.sendpulse.sptb.service.interfaces.SendBotMessageService;
 import by.github.sendpulse.sptb.service.SendBotMessageServiceImpl;
+import by.github.sendpulse.sptb.service.interfaces.SubscriptionGroupService;
 import by.github.sendpulse.sptb.service.interfaces.UserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -18,6 +19,9 @@ public abstract class AbstractCommandTest {
     protected SendPulseTelegramBot sendPulseTelegramBot = Mockito.mock(SendPulseTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(sendPulseTelegramBot);
     protected UserService userService = Mockito.mock(UserService.class);
+    protected SubscriptionGroupService subscriptionGroupService = Mockito.mock(SubscriptionGroupService.class);
+
+    protected HelpCommandKeyboard helpCommandKeyboard = Mockito.mock(HelpCommandKeyboard.class);
 
     abstract Command getCommand();
     abstract String getCommandMessage();

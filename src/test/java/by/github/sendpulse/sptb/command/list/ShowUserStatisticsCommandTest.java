@@ -2,10 +2,10 @@ package by.github.sendpulse.sptb.command.list;
 
 import by.github.sendpulse.sptb.command.Command;
 import by.github.sendpulse.sptb.command.CommandName;
+import by.github.sendpulse.sptb.command.list.quiz.ShowUserStatisticsCommand;
 import org.junit.jupiter.api.DisplayName;
 
-import static by.github.sendpulse.sptb.command.list.ShowUserStatisticsCommand.USER_STATISTIC_MESSAGE;
-import static org.junit.jupiter.api.Assertions.*;
+import static by.github.sendpulse.sptb.command.list.quiz.ShowUserStatisticsCommand.USER_STATISTIC_MESSAGE;
 
 @DisplayName("Unit test for ShowUserStatisticsCommand")
 class ShowUserStatisticsCommandTest extends AbstractCommandTest{
